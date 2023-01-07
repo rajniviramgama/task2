@@ -28,6 +28,7 @@ const UserInfo = ({ data, itemsPerPage, startFrom, searchByData }) => {
     setFilteredData,
     setSearching,
     filteredData,
+    setChangePerPageRecord,
   } = usePagination({ itemsPerPage, data, startFrom });
 
   const submitHandler = (e) => {
@@ -97,6 +98,21 @@ const UserInfo = ({ data, itemsPerPage, startFrom, searchByData }) => {
         className="mt-3 mb-3 is-flex"
         style={{ justifyContent: "center" }}
       >
+        <div className="select mr-2">
+          {/* value={searchBy} */}
+          <select
+            onChange={(e) => {
+              setChangePerPageRecord(e.target.value);
+            }}
+          >
+            {/* {searchByData.map((data, index) => ( */}
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            {/* ))} */}
+          </select>
+        </div>
         {searchByData && searchByData.length > 0 && (
           <div className="select mr-2">
             <select

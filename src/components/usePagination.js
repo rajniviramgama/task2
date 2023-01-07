@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 
 const usePagination = (initialState) => {
-  const { itemsPerPage, data, startFrom } = initialState;
+  // const { itemsPerPage, data, startFrom } = initialState;
+  const { data, startFrom } = initialState;
   const [searching, setSearching] = useState(false);
+  const [ChangePerPageRecord, setChangePerPageRecord] = useState(10);
   const [filteredData, setFilteredData] = useState(data);
-  const perPage = itemsPerPage ? itemsPerPage : 10;
+  // const perPage = itemsPerPage ? itemsPerPage : 10;
+  const perPage = ChangePerPageRecord;
   const pages = Math.ceil(filteredData.length / perPage);
   const pagination = [];
   const [currentPage, setCurrentPage] = useState(
@@ -25,7 +28,7 @@ const usePagination = (initialState) => {
       setCurrentPage(1);
       setSearching(false);
     }
-  }, [filteredData, currentPage]);
+  }, [filteredData, currentPage, ChangePerPageRecord]);
 
   let ellipsisLeft = false;
   let ellipsisRight = false;
@@ -95,6 +98,7 @@ const usePagination = (initialState) => {
     changePage,
     setFilteredData,
     setSearching,
+    setChangePerPageRecord,
   };
 };
 

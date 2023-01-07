@@ -10,7 +10,7 @@ const App = () => {
       <div className="container px-2">
         <UserInfo
           data={data}
-          itemsPerPage={10}
+          // itemsPerPage={10}
           searchByData={[
             { label: "USERNAME", value: "username" },
             { label: "FIRSTNAME", value: "first_name" },
