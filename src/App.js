@@ -13,8 +13,8 @@ const App = () => {
           itemsPerPage={10}
           searchByData={[
             { label: "USERNAME", value: "username" },
-            { label: "FIRST NAME", value: "first_name" },
-            { label: "LAST NAME", value: "last_name" },
+            { label: "FIRSTNAME", value: "first_name" },
+            { label: "LASTNAME", value: "last_name" },
             { label: "EMAIL", value: "email" },
             { label: "GENDER", value: "gender" },
             { label: "DOB", value: "dob" },
